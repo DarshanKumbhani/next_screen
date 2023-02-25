@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 class Data extends StatefulWidget {
-  String? l1;
+  //String? l0;
 
-  String? l3;
-  String? l4;
+  //String? l3;
+ // String? l4;
 
-  Data(this.l1,this.l3,this.l4);
+  //Data(this.l0,this.l3,this.l4);
+
 
   @override
   State<Data> createState() => _DataState();
@@ -14,6 +15,9 @@ class Data extends StatefulWidget {
 class _DataState extends State<Data> {
   @override
   Widget build(BuildContext context) {
+
+    List l1 = ModalRoute.of(context)!.settings.arguments as List;
+
     return Scaffold(
           appBar: AppBar(
             title: Center(child: Text("Data")),
@@ -22,13 +26,13 @@ class _DataState extends State<Data> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Image.asset("${widget.l3}"),
+                  Image.asset("${l1[2]}"),
                   SizedBox(height: 20,),
-                  Text("${widget.l1}",style: TextStyle(
+                  Text("${l1[0]}",style: TextStyle(
                       fontSize: 30
                   ),),
                   SizedBox(height: 30),
-                  Text("${widget.l4}",style: TextStyle(
+                  Text("${l1[3]}",style: TextStyle(
                       fontSize: 20,
                       wordSpacing: 10,
                       color: Colors.black

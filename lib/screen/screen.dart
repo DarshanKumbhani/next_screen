@@ -6,7 +6,7 @@ class Home_screen extends StatefulWidget {
   @override
   State<Home_screen> createState() => _Home_screenState();
 }
-List l1=[
+List l0=[
   "🇨🇴   Colombia   🇨🇴",
   "🇺🇲   USA   🇺🇲 ",
   "🇯🇴   Jordan   🇯🇴",
@@ -35,11 +35,11 @@ List l3=[
   "assets/Image/USA.jpg",
   "assets/Image/jorden.jpg",
   "assets/Image/India.jpg",
-  "assets/Image/Canada.jpg"
-      "assets/Image/indonasoa.jpg",
-  "assets/Image/zimbave.jfif"
-      "assets/Image/nepal.jpg"
-      "assets/Image/iraq.jfif",
+  "assets/Image/Canada.jpg",
+  "assets/Image/indonasoa.jpg",
+  "assets/Image/zimbave.jfif",
+  "assets/Image/nepal.jpg",
+  "assets/Image/iraq.jfif",
   "assets/Image/japan.jfif",
 ];
 
@@ -54,10 +54,8 @@ List l4=[
   "Nepal (English: /nɪˈpɔːl/;[14] Nepali: नेपाल [nepal]), officially The Federal Democratic Republic of Nepal (सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल), is a landlocked country in South Asia. It is mainly situated in the Himalayas, but also includes parts of the Indo-Gangetic Plain, bordering the Tibet Autonomous Region of China to the north, and India in the south, east, and west, while it is narrowly separated from Bangladesh by the Siliguri Corridor, and from Bhutan by the Indian state of Sikkim. Nepal has a diverse geography, including fertile plains, subalpine forested hills, and eight of the world's ten tallest mountains, including Mount Everest, the highest point on Earth. Nepal is a multi-ethnic, multi-lingual, multi-religious and multi-cultural state, with Nepali as the official language. Kathmandu is the nation's capital and the largest city.",
   "Iraq,[a] officially the Republic of Iraq,[b] is a country in Western Asia. It is bordered by Turkey to the north, Iran to the east, the Persian Gulf and Kuwait to the southeast, Saudi Arabia to the south, Jordan to the southwest and Syria to the west. The capital and largest city is Baghdad. Iraq is home to diverse ethnic groups including Iraqi Arabs, Kurds, Turkmens, Assyrians, Armenians, Yazidis, Mandaeans, Persians and Shabakis with similarly diverse geography and wildlife. The majority of the country's 40 million residents are Muslims – the notable other faiths are Christianity, Yazidism, Mandaeism, Yarsanism and Zoroastrianism.[12][2] The official languages of Iraq are Arabic and Kurdish; others also recognised in specific regions are Suret (Assyrian), Turkish and Armenian.[13]",
   "Japan (Japanese: 日本, Nippon or Nihon,[nb 1] and formally 日本国, Nihonkoku)[nb 2] is an island country in East Asia. It is situated in the northwest Pacific Ocean and is bordered on the west by the Sea of Japan, extending from the Sea of Okhotsk in the north toward the East China Sea, Philippine Sea, and Taiwan in the south. Japan is a part of the Ring of Fire, and spans an archipelago of 14,125 islands covering 377,975 square kilometers (145,937 sq mi); the five main islands are Hokkaido, Honshu (the 'mainland'), Shikoku, Kyushu, and Okinawa. Tokyo is the nation's capital and largest city, followed by Yokohama, Osaka, Nagoya, Sapporo, Fukuoka, Kobe, and Kyoto.",
-
-
-
 ];
+
 
 
 
@@ -88,12 +86,15 @@ class _Home_screenState extends State<Home_screen> {
       body: SingleChildScrollView(
         child: Column(
           children:
-            l1.asMap().entries.map((e) =>
+            l0.asMap().entries.map((e) =>
             InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Data(l1[e.key],l3[e.key],l4[e.key]),));
+                  List l1=[l0[e.key],l2[e.key],l3[e.key],l4[e.key]];
+                  print("===== ${l3[7]}");
+                  Navigator.pushNamed(context, 'second',arguments: l1);
+                 // Navigator.push(context, MaterialPageRoute(builder: (context) => Data(l1[e.key],l3[e.key],l4[e.key]),));
                 },
-                child: CountryList(l1[e.key], l2[e.key]))
+                child: CountryList(l0[e.key], l2[e.key]))
             ).toList()
 
 
